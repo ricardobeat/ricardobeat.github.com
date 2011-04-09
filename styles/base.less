@@ -112,6 +112,7 @@ html {
 }
 body {
 	max-width:940px;
+	min-width:320px;
 	margin:0 auto;
 	padding:60px 20px 110px;
 	position:relative;
@@ -155,8 +156,7 @@ time {
 }
 
 #content {
-	overflow:hidden;
-	width:940px;
+	width:100%;
 	position:relative;
 }
 
@@ -184,7 +184,21 @@ h1 {
 	display:none;
 }
 
+.page:after {
+	content: 'ricardo.cc';
+	color:#bbb;
+	position:absolute;
+	top:20px;
+	left:20px;
+	width:100%;
+	font-size:12px;
+	font-family:@sans;
+}
+
 #content .post {
+	a[rel=external] {
+		content: ” ” url(/images/external.gif);
+	}
 	blockquote {
 		font-family: @sans;
 		font-weight:400;
@@ -205,7 +219,7 @@ h1 {
 		time { color:#fff; }
 	}
 	p { margin:1em 0; }
-	p > code { padding:2px; background-color:#eee; }
+	p > code { padding:0 2px; background-color:#eee; }
 }
 
 #content h1 {
@@ -225,16 +239,20 @@ h1 {
 }
 
 .highlight {
+	font-size:0.875em;
 	border:1px solid #222;
 	.border-radius(6px);
-	font-size:0.9375em;
+	min-width:40px;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: none;
 }
 
 // ----------------------- // footer
 
 #footer {
 	height:120px;
-	width:940px;
+	width:100%;
+	max-width:940px;
 	position:fixed;
 	bottom:0;
 	border-top:1px solid #ddd;
@@ -244,6 +262,7 @@ h1 {
 	.col {
 		float:left;
 		width:50%;
+		min-width:300px;
 	}
 	ul { text-align:right; }
 	.email { display:block; }
@@ -258,5 +277,27 @@ h1 {
 		li { padding-left:20px; }
 		border-bottom:1px solid #ddd;
 		margin-bottom:10px;
+	}
+}
+
+@media only screen and (max-device-width: 480px) {
+	body
+	#content,
+	#footer {
+		max-width:480px;
+	}
+	#footer {
+		height:auto;
+		position:static;
+		clear:both;
+		margin-top:20px;
+		.col {
+			width:auto;
+			clear:left;
+			padding-right:10px;
+		}
+		ul {
+			text-align:left !important;
+		}
 	}
 }
