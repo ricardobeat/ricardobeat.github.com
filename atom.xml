@@ -5,7 +5,7 @@ layout: nil
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Ricardo Tomasi</title>
- <link href="http://ricardobeat.github.com/atom.xml" rel="self"/>
+ <link href="http://ricardo.cc/atom.xml" rel="self"/>
  <link href="http://ricardo.cc/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>http://ricardo.cc/</id>
@@ -17,7 +17,7 @@ layout: nil
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://ricardobeat.github.com{{ post.url }}"/>
+   <link href="http://ricardo.cc{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>http://ricardobeat.github.com{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
