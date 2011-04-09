@@ -1,0 +1,240 @@
+/* 
+  html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+  v1.4 2009-07-27 | Authors: Eric Meyer & Richard Clark
+  html5doctor.com/html-5-reset-stylesheet/
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+}                  
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { display:block; }
+
+ol, ul { list-style:none; }
+blockquote, q { quotes:none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content:''; content:none; }
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+ins { background-color:#ff9; color:#000; text-decoration:none; }
+mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+del { text-decoration: line-through; }
+abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
+table { border-collapse:collapse; border-spacing:0; }
+hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
+input, select { vertical-align:middle; }
+select, input, textarea, button { font:99% sans-serif; }
+html { overflow-y: scroll; }
+strong, th { font-weight: 700; }
+th, td, td img { vertical-align: middle; }
+sub { vertical-align: sub; font-size: smaller; }
+sup { vertical-align: super; font-size: smaller; }
+pre { padding: 15px; white-space: pre; white-space: pre-wrap; white-space: pre-line; word-wrap: break-word; }
+textarea { overflow: auto; }
+label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
+button, input, select, textarea { margin: 0; }
+input[disabled], select[disabled], textarea[disabled] { opacity:0.8; color:#777; }
+button {  width: auto; overflow: visible; }
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+// ----------------------- // mixins
+.border-radius(@radius: 3px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.opacity(@alpha: 1) {
+	@ms: @alpha * 100;
+	-moz-opacity: @alpha;
+	opacity: @alpha;
+	filter: e(%('alpha(opacity=%d)', @alpha * 100));
+	-ms-filter: %('progid:DXImageTransform.Microsoft.Alpha(Opacity=%d)', @alpha * 100);
+}
+.text-shadow(@shadow) {
+	text-shadow: @shadow;
+	-moz-text-shadow: @shadow;
+	-webkit-text-shadow: @shadow;
+}
+.box-shadow(@shadow) {
+	box-shadow: @shadow;
+	-moz-box-shadow: @shadow;
+	-webkit-box-shadow: @shadow;
+}
+
+.font-src(@path, @svgid) {
+	src: e(%("url(%s.eot) format('eot')", @path));
+	src: e(%("url(%s.eot?#iefix) format('eot')", @path)),
+	     e(%("url(%s.woff) format('woff')", @path)),
+        e(%("url(%s.ttf) format('truetype')", @path)),
+	     e(%("url(%s.svg%s) format('svg')", @path, @svgid));
+}
+
+// ----------------------- // fontes
+
+@font-face {
+	font-family: 'Ubuntu';
+	.font-src("/fonts/Ubuntu-Regular-webfont", '#webfont1HARLTaU');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Ubuntu';
+	.font-src("/fonts/Ubuntu-Bold-webfont", '#webfontp2a9gSv8');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@sans: "Ubuntu", "Lucida Grande", sans-serif;
+@serif: Georgia, Palatino, "Hoefler Text", serif;
+@mono: Menlo, Consolas, "Courier New", Courier, Mono, monospace;
+
+// ----------------------- // geral
+
+body {
+	max-width:940px;
+	margin:0 auto;
+	padding:60px 20px 80px;
+}
+
+body, select, input, textarea { 
+  color: #444;
+  font-family: @serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: @sans;
+	font-weight:700;
+}
+
+pre, code, kbd, samp {
+	font-family: @mono;
+}
+ 
+a { text-decoration:none; color:#5d7de2 }
+a:hover, a:active { outline: none; }
+a, a:active, a:visited { color: #19599f; }
+a:hover { text-decoration:underline; }
+
+::-moz-selection{ background: #5d7de2; color:#fff; text-shadow: none; }
+::selection { background:#5d7de2; color:#fff; text-shadow: none; }
+a:link { -webkit-tap-highlight-color: #5d7de2; } 
+
+.hidden { display: none; visibility: hidden; } 
+
+legend, .vhidden {
+	position: absolute !important;    
+	left:-9999em;
+	text-indent:-9999px;
+	margin-bottom:-999em;
+}
+
+time {
+	color:#aaa;
+	font-family: @mono;
+}
+
+// ----------------------- // home
+
+h1 {
+	font-size:18px;
+	margin-bottom:20px;
+	color:#5d7de2;
+}
+
+.posts {
+	time {
+		margin-right:10px;
+	}
+	li {
+		padding:10px 0;
+		font-family: @sans;
+	}
+}
+
+// ----------------------- // page / post
+
+.page #header {
+	display:none;
+}
+
+#content .post {
+	blockquote {
+		font-family: @sans;
+		font-weight:400;
+		strong { font-weight:700; }
+		overflow:hidden;
+	}
+	h1, .date {
+		display:inline-block;
+		vertical-align:middle;
+		margin-bottom:10px;
+	}
+	.date {
+		font-size:0.875em;
+		padding:1px 3px;
+		.border-radius(3px);
+		background-color:#bbb;
+		.text-shadow(-1px -1px 0 #aaa);
+		time { color:#fff; }
+	}
+	p { margin:1em 0; }
+	p > code { padding:2px; background-color:#eee; }
+}
+
+#content h1 {
+	font-size:24px;
+	margin-bottom:0;
+	color:#333;
+	margin-right:20px;
+}
+
+#related {
+	margin:20px 0;
+	font-size:0.9em;
+	ul {
+		padding-left:20px;
+		list-style:disc inside;
+	}
+}
+
+.highlight {
+	border:1px solid #222;
+	.border-radius(6px);
+	font-size:0.9375em;
+}
+
+// ----------------------- // footer
+
+#footer {
+	height:80px;
+	width:940px;
+	position:fixed;
+	bottom:0;
+	border-top:1px solid #ddd;
+	padding:10px 0;
+	font-size:0.8em;
+	line-height:1.2;
+	.col {
+		float:left;
+		width:50%;
+	}
+	ul { text-align:right; }
+	.email { display:block; }
+}
