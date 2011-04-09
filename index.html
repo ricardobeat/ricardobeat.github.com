@@ -3,9 +3,11 @@ layout: default
 title: Ricardo Tomasi
 ---
 
-<h2 class="vhidden">Blog</h2>
-<ul class="posts">
-	{% for post in site.posts %}
-		<li><time>{{ post.date | date_to_string }}</time> <a href="{{ post.url }}">{{ post.title }}</a></li>
-	{% endfor %}
-</ul>
+<section class="blog">
+	<h2 class="vhidden">Blog</h2>
+	<ul class="posts">
+		{% for post in site.posts %}
+			<li><time>{{ post.date | date_to_string }}</time> <a href="{{ post.url }}">{{ post.title }}</a></li>
+		{% endfor %}
+	</ul>
+</section>

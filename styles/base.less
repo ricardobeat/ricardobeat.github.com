@@ -107,10 +107,14 @@ button {  width: auto; overflow: visible; }
 
 // ----------------------- // geral
 
+html {
+	background-color:#fbfbfb;
+}
 body {
 	max-width:940px;
 	margin:0 auto;
-	padding:60px 20px 80px;
+	padding:60px 20px 110px;
+	position:relative;
 }
 
 body, select, input, textarea { 
@@ -150,6 +154,12 @@ time {
 	font-family: @mono;
 }
 
+#content {
+	overflow:hidden;
+	width:940px;
+	position:relative;
+}
+
 // ----------------------- // home
 
 h1 {
@@ -158,7 +168,7 @@ h1 {
 	color:#5d7de2;
 }
 
-.posts {
+.posts, .projects {
 	time {
 		margin-right:10px;
 	}
@@ -223,12 +233,12 @@ h1 {
 // ----------------------- // footer
 
 #footer {
-	height:80px;
+	height:120px;
 	width:940px;
 	position:fixed;
 	bottom:0;
 	border-top:1px solid #ddd;
-	padding:10px 0;
+	padding:0 0 10px;
 	font-size:0.8em;
 	line-height:1.2;
 	.col {
@@ -237,4 +247,16 @@ h1 {
 	}
 	ul { text-align:right; }
 	.email { display:block; }
+	
+	.projects {
+		height:20px;
+		padding:5px 0;
+		line-height:20px;
+		h2 { display:inline; color:#777; font-weight:400; }
+		h2:after { content:': '; }
+		ul, li { display:inline; }
+		li { padding-left:20px; }
+		border-bottom:1px solid #ddd;
+		margin-bottom:10px;
+	}
 }
