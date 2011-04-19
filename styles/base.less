@@ -114,7 +114,7 @@ body {
 	max-width:940px;
 	min-width:320px;
 	margin:0 auto;
-	padding:60px 20px 180px;
+	padding:60px 20px 80px;
 	position:relative;
 }
 
@@ -250,7 +250,7 @@ h1 {
 // ----------------------- // footer
 
 #footer {
-	height:120px;
+	height:80px;
 	width:100%;
 	max-width:940px;
 	position:fixed;
@@ -278,6 +278,12 @@ h1 {
 		li { padding-left:20px; }
 		border-bottom:1px solid #ddd;
 		margin-bottom:10px;
+	}
+	
+	.links li {
+		float:right;
+		width:100px;
+		&:nth-child(2n+2) { clear: both; }
 	}
 }
 
