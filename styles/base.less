@@ -116,10 +116,12 @@ html {
 }
 body {
 	max-width:940px;
-	min-width:320px;
+	min-width:280px;
 	margin:0 auto;
 	padding:60px 20px 80px;
 	position:relative;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: none;
 }
 
 body, select, input, textarea { 
@@ -170,6 +172,10 @@ h1 {
 	font-size:18px;
 	margin-bottom:20px;
 	color:#5d7de2;
+	a {
+		color:#5d7de2 !important;
+		text-decoration:none !important;
+	}
 }
 
 .posts, .projects {
@@ -184,19 +190,10 @@ h1 {
 
 // ----------------------- // page / post
 
-.page #header {
-	display:none;
-}
+.page { padding-top:40px; }
 
-.page:after {
-	content: 'ricardo.cc';
-	color:#bbb;
-	position:absolute;
-	top:20px;
-	left:20px;
-	width:100%;
-	font-size:12px;
-	font-family:@sans;
+.page #header {
+	h1 { font-size:13px; }
 }
 
 #content .post {
@@ -246,7 +243,9 @@ h1 {
 	font-size:0.875em;
 	border:1px solid #222;
 	.border-radius(6px);
-	min-width:40px;
+	min-width:440px;
+	
+	overflow:visible;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: none;
 }
@@ -325,6 +324,8 @@ h1 {
 		}
 		.links {
 			padding-left:0;
+			padding-top:5px;
+			border-top:1px solid #ddd;
 			li {
 				float:left;
 				text-align:left;
@@ -332,6 +333,7 @@ h1 {
 			}
 		}
 	}
+	.highlight { .border-radius(6px 0 0 6px); }
 }
 
 @media only screen and (max-height: 560px) {
@@ -340,28 +342,5 @@ h1 {
 		position:static;
 		margin-top:20px;
 		&:after { display:none; }
-	}
-}
-
-@media only screen and (max-device-width: 480px) {
-	body
-	#content,
-	#footer {
-		max-width:480px;
-	}
-	#footer {
-		&:after { display:none; }
-		height:auto;
-		position:static;
-		clear:both;
-		margin-top:20px;
-		.col {
-			width:auto;
-			clear:left;
-			padding-right:10px;
-		}
-		ul {
-			text-align:left !important;
-		}
 	}
 }
