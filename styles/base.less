@@ -57,27 +57,31 @@ button {  width: auto; overflow: visible; }
 // ----------------------- // mixins
 .border-radius(@radius: 3px) {
   -webkit-border-radius: @radius;
-  -moz-border-radius: @radius;
-  border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
 }
 .opacity(@alpha: 1) {
-	@ms: @alpha * 100;
 	-moz-opacity: @alpha;
-	opacity: @alpha;
+	     opacity: @alpha;
+	@ms: @alpha * 100;
 	filter: e(%('alpha(opacity=%d)', @alpha * 100));
 	-ms-filter: %('progid:DXImageTransform.Microsoft.Alpha(Opacity=%d)', @alpha * 100);
 }
 .text-shadow(@shadow) {
-	text-shadow: @shadow;
-	-moz-text-shadow: @shadow;
 	-webkit-text-shadow: @shadow;
+	   -moz-text-shadow: @shadow;
+	        text-shadow: @shadow;
 }
 .box-shadow(@shadow) {
-	box-shadow: @shadow;
-	-moz-box-shadow: @shadow;
 	-webkit-box-shadow: @shadow;
+	   -moz-box-shadow: @shadow;
+	        box-shadow: @shadow;
 }
-
+.box-sizing(@s) {
+	-webkit-box-sizing: @s;
+	   -moz-box-sizing: @s;
+	        box-sizing: @s;
+}
 .font-src(@path, @svgid) {
 	src: e(%("url(%s.eot) format('eot')", @path));
 	src: e(%("url(%s.eot?#iefix) format('eot')", @path)),
@@ -252,6 +256,7 @@ h1 {
 #footer {
 	height:80px;
 	width:100%;
+	margin:0 auto;
 	max-width:940px;
 	position:fixed;
 	bottom:0;
@@ -260,10 +265,23 @@ h1 {
 	background-color:#fbfbfb;
 	font-size:0.8em;
 	line-height:1.2;
+	z-index:2;
+	&:after {
+		content:' ';
+		display:block;
+		position:fixed;
+		bottom:0;
+		left:0;
+		right:0;
+		height:90px;
+		.box-shadow(0 -1px 8px rgba(0,0,0,.1));
+		border-top:1px solid #ddd;
+		z-index:-1;
+	}
 	.col {
 		float:left;
 		width:50%;
-		min-width:300px;
+		min-width:200px;
 	}
 	ul { text-align:right; }
 	.email { display:block; }
@@ -280,10 +298,39 @@ h1 {
 		margin-bottom:10px;
 	}
 	
-	.links li {
-		float:right;
-		width:100px;
-		&:nth-child(2n+2) { clear: both; }
+	.links {
+		.box-sizing(border-box);
+		padding:0 40px 0 20px;
+		li {
+			float:right;
+			width:100px;
+			&:nth-child(2n+2) { clear: both; }
+		}
+	}
+}
+
+@media only screen and (max-width: 764px) {
+	#footer .links li { width:70px; }
+	#footer .col { margin-bottom:5px; }
+}
+
+@media only screen and (max-width: 480px) {
+	#footer {
+		height:120px;
+		&:after { height:140px; }
+		.col {
+			width:auto;
+			clear:left;
+			padding-right:10px;
+		}
+		.links {
+			padding-left:0;
+			li {
+				float:left;
+				text-align:left;
+				width:80px;
+			}
+		}
 	}
 }
 
@@ -292,6 +339,7 @@ h1 {
 	#footer {
 		position:static;
 		margin-top:20px;
+		&:after { display:none; }
 	}
 }
 
@@ -302,6 +350,7 @@ h1 {
 		max-width:480px;
 	}
 	#footer {
+		&:after { display:none; }
 		height:auto;
 		position:static;
 		clear:both;
