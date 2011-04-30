@@ -21,7 +21,7 @@ String.prototype.__defineGetter__ 'i18n', () ->
 It would just check for the existence of a translation and return it. It worked like a charm, using this in the templates:
 
 {% highlight html %}
-<p>${"Look ma I'm being translated".i18n}
+<p>${"Look ma I'm being translated".i18n}</p>
 {% endhighlight %}
 
 *Magic.*
