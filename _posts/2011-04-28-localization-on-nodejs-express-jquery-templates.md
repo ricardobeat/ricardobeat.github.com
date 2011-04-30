@@ -15,7 +15,7 @@ My first idea was to add a getter called .i18n to `String.prototype`. That's pos
 
 {% highlight coffeescript %}
 String.prototype.__defineGetter__ 'i18n', () ->
-	return strings['pt']?[this] || this
+    return strings['pt']?[this] || this
 {% endhighlight %}
 
 It would just check for the existence of a translation and return it. It worked like a charm, using this in the templates:
