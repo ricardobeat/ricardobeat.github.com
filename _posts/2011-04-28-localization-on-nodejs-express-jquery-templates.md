@@ -30,12 +30,14 @@ This didn't work though, because you can't access the request's scope from the g
 
 {% highlight html %}
 <ul>
-	<li>{{e "Something"}}</li>
-	<li>{{e "Another something"}}</li>
+	<li>{[e "Something"}}</li>
+	<li>{[e "Another something"}}</li>
 </ul>
-<input type="submit" value="{{e 'submit'}}" />
+<input type="submit" value="{[e 'submit'}}" />
 {% endhighlight %}
 
-I wish I could just use `{["text here"}}` (ignore the bracket, [markdown](http://daringfireball.net/projects/markdown/) can't escape double braces) - but I'd have to break into node-jqtpl's house and mess with it's privates, that wouldn't be nice. Right?
+(ignore the bracket, [markdown](http://daringfireball.net/projects/markdown/) can't handle the double braces)
+
+I wish I could just use `{["text here"}}` - but I'd have to break into node-jqtpl's house and mess with it's privates, that wouldn't be nice. Right?
 
 I'm currently rewriting it to use .json files and update strings automagically, hope to get v0.2 up soon. You can get it from npm or [github](https://github.com/ricardobeat/jqtpl-express-i18n). Questions or issues go to [https://github.com/ricardobeat/jqtpl-express-i18n](https://github.com/ricardobeat/jqtpl-express-i18n).
