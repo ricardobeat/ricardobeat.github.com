@@ -351,6 +351,15 @@ h1 {
 	}
 }
 
+.page #wrap {
+	padding-bottom:20px;
+}
+.page #footer {
+	position:relative;
+	margin-top:40px;
+	&:after { position:absolute; }
+}
+
 @media only screen and (max-width: 764px) {
 	#footer .links li { width:70px; }
 	#footer .col { margin-bottom:5px; }
@@ -375,17 +384,6 @@ h1 {
 				width:80px;
 			}
 		}
-	}
-}
-
-@media screen and (max-device-width:1024px) {
-	body {
-		position: relative;
-		top: auto;
-		right: auto;
-		bottom: auto;
-		left: auto;
-		overflow: auto;
 	}
 }
 
