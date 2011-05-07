@@ -9,16 +9,16 @@ title: Localization on node.js + express + jquery templates
 <div class="date"><time datetime="{{ page.date | date_to_xmlschema }}" pubdate>{{ page.date | date_to_string }}</time></div>
 
 
-I just published `jqtpl-express-i18n`, a module for translations using jquery templates and express. It's quite simple but took me a little time to figure it out.
+I just published `jqtpl-express-i18n`, a module for translations using jquery templates and express. It takes a string from the .html template and looks for a suitable translation according to the received `Accept-Language` header.
 
-My first idea was to add a getter called .i18n to `String.prototype`. That's possible using __defineGetter__:
+My first idea was to add a getter called .i18n to `String.prototype` using __defineGetter__:
 
 {% highlight coffeescript %}
 String.prototype.__defineGetter__ 'i18n', () ->
     return strings['pt']?[this] || this
 {% endhighlight %}
 
-It would just check for the existence of a translation and return it. It worked like a charm, using this in the templates:
+And this in the templates:
 
 {% highlight html %}
 <p>${"Look ma I'm being translated".i18n}</p>
@@ -26,8 +26,20 @@ It would just check for the existence of a translation and return it. It worked 
 
 *Magic.*
 
-The problem was, see that `'pt'` string up there? It's supposed to be the `req.session.lang` property, which is set on a user basis. But it turned out to be unreachable from inside the getter. Even adding `i18n` as function to String.prototype didn't work (`${"string".translate()}`). I have no idea in what scope that thing is executed.
+This didn't work though, because you can't access the request's scope from the getter.
 
-I ended up extending jQuery templates after following [the only example I could find](https://gist.github.com/726057), and it turned out to be much cleaner.
+I ended up extending jQuery templates after following [this example](https://gist.github.com/726057), and it turned out to be much cleaner. Now my templates look like this:
 
-Well, it seems to work, and you can get it from npm or [github](https://github.com/ricardobeat/jqtpl-express-i18n).
+{% highlight html %}
+<ul>
+	<li>{{e "Something"}}</li>
+	<li>{{e "Another something"}}</li>
+</ul>
+<input type="submit" value="{{e 'submit'}}" />
+{% endhighlight %}
+
+I wish I could just use `{{"text here"}}` but I'd have to break into jqtpl's house and mess with it's privates, that wouldn't be nice. Right?
+
+I'm currently rewriting it to use .json files and update strings automagically, hope to get v0.2 up soon.
+
+You can get it from npm or [github](https://github.com/ricardobeat/jqtpl-express-i18n). Questions or issues go to [https://github.com/ricardobeat/jqtpl-express-i18n](https://github.com/ricardobeat/jqtpl-express-i18n).
