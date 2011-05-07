@@ -26,9 +26,7 @@ And this in the templates:
 
 *Magic.*
 
-This didn't work though, because you can't access the request's scope from the getter.
-
-I ended up extending jQuery templates after following [this example](https://gist.github.com/726057), and it turned out to be much cleaner. Now my templates look like this:
+This didn't work though, because you can't access the request's scope from the getter. I ended up extending jQuery templates after following [this example](https://gist.github.com/726057), and it turned out to be much cleaner. Now my templates look like this:
 
 {% highlight html %}
 <ul>
@@ -40,6 +38,4 @@ I ended up extending jQuery templates after following [this example](https://gis
 
 I wish I could just use `{{"text here"}}` but I'd have to break into jqtpl's house and mess with it's privates, that wouldn't be nice. Right?
 
-I'm currently rewriting it to use .json files and update strings automagically, hope to get v0.2 up soon.
-
-You can get it from npm or [github](https://github.com/ricardobeat/jqtpl-express-i18n). Questions or issues go to [https://github.com/ricardobeat/jqtpl-express-i18n](https://github.com/ricardobeat/jqtpl-express-i18n).
+I'm currently rewriting it to use .json files and update strings automagically, hope to get v0.2 up soon. You can get it from npm or [github](https://github.com/ricardobeat/jqtpl-express-i18n). Questions or issues go to [https://github.com/ricardobeat/jqtpl-express-i18n](https://github.com/ricardobeat/jqtpl-express-i18n).
