@@ -6,9 +6,6 @@ title: Localization on node.js + express + jquery templates
 {{ page.title }}
 ================
 
-<div class="date"><time datetime="{{ page.date | date_to_xmlschema }}" pubdate>{{ page.date | date_to_string }}</time></div>
-
-
 I just published `jqtpl-express-i18n`, a module for translations using [jquery templates](https://github.com/kof/node-jqtpl) and [express](http://expressjs.com). It takes a string from the .html template and looks for a suitable translation according to the received `Accept-Language` header.
 
 My first idea was to add a getter called .i18n to `String.prototype` using __defineGetter__:
