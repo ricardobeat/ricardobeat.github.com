@@ -9,7 +9,7 @@ title: Localization on node.js + express + jquery templates
 <div class="date"><time datetime="{{ page.date | date_to_xmlschema }}" pubdate>{{ page.date | date_to_string }}</time></div>
 
 
-I just published `jqtpl-express-i18n`, a module for translations using jquery templates and express. It takes a string from the .html template and looks for a suitable translation according to the received `Accept-Language` header.
+I just published `jqtpl-express-i18n`, a module for translations using [jquery templates](https://github.com/kof/node-jqtpl) and [express](http://expressjs.com). It takes a string from the .html template and looks for a suitable translation according to the received `Accept-Language` header.
 
 My first idea was to add a getter called .i18n to `String.prototype` using __defineGetter__:
 
@@ -36,6 +36,6 @@ This didn't work though, because you can't access the request's scope from the g
 <input type="submit" value="{{e 'submit'}}" />
 {% endhighlight %}
 
-I wish I could just use `{{"text here"}}` but I'd have to break into jqtpl's house and mess with it's privates, that wouldn't be nice. Right?
+I wish I could just use `{["text here"}}` (ignore the bracket, [markdown](http://daringfireball.net/projects/markdown/) can't escape double braces) - but I'd have to break into node-jqtpl's house and mess with it's privates, that wouldn't be nice. Right?
 
 I'm currently rewriting it to use .json files and update strings automagically, hope to get v0.2 up soon. You can get it from npm or [github](https://github.com/ricardobeat/jqtpl-express-i18n). Questions or issues go to [https://github.com/ricardobeat/jqtpl-express-i18n](https://github.com/ricardobeat/jqtpl-express-i18n).
