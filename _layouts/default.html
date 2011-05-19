@@ -38,7 +38,11 @@
 <div id="wrap">
 	
 	<header id="header">
+		{% if page.date %}
 		<h1><a href="/">Ricardo Tomasi</a></h1>
+		{% else %}
+		<h1>Ricardo Tomasi</h1>
+		{% endif %}
 	</header>
 	
 	<section id="content">
