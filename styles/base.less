@@ -113,6 +113,7 @@ button {  width: auto; overflow: visible; }
 }
 
 @sans: "Ubuntu", "Lucida Grande", sans-serif;
+@text: "Ubuntu", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma;
 @serif: Georgia, Palatino, "Hoefler Text", serif;
 @mono: Menlo, Consolas, "Courier New", Courier, Mono, monospace;
 
@@ -136,7 +137,7 @@ body {
 
 body, select, input, textarea { 
   color: #444;
-  font-family: @serif;
+  font-family: @text;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -167,7 +168,7 @@ legend, .vhidden {
 }
 
 time {
-	color:#aaa;
+	color:#bcbcbc;
 	//font-family: @mono;
 	font-family: "Lucida Grande", sans-serif;
 }
@@ -220,21 +221,32 @@ h1 {
 	h1 {
 		display:inline-block;
 		vertical-align:middle;
-		margin-bottom:10px;
+		font-size:32px;
+	}
+	h2 {
+		font-size:20px;
+		margin-top:40px;
+		padding-bottom:5px;
+		border-bottom:1px solid #ccc;
 	}
 	.date {
 		font-size:0.875em;
-		padding:1px 3px 10px;
+		padding:1px 3px 6px;
 	}
-	p { margin:1em 0; line-height:1.4; }
+	p {
+		margin:1em 0;
+		line-height:1.4;
+		padding-left:1em;
+	}
 	p > code { padding:0 2px; background-color:#eee; font-size:92%; }
 }
 
-#content h1 {
-	font-size:24px;
-	margin-bottom:0;
-	color:#333;
-	margin-right:20px;
+#content {
+	h1 {
+		font-size:24px;
+		margin-bottom:0;
+		color:#333;
+	}
 }
 
 #related {
