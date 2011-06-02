@@ -137,9 +137,21 @@ sieve = (num) ->
     numbers.indexOf(num) > -1
 {% endhighlight %}
 
+
+11. Bonus
+---------
+
+Shortest still readable fizzbuzz version you'll see:
+
+{% highlight coffeescript %}
+"#{('fizz' unless i%3) ? ''}#{('buzz' unless i%5) ? ''}" or i for i in [1..100]
+{% endhighlight %}
+
+You can golf your coffee without being cryptic.
+
 Conclusions
 -----------
 
 Modern languages rule. I'm surprised that some of the syntax in these map so closely to Scala, given they're oceans apart.
 
-You can [learn more about CoffeeScript here](http://jashkenas.github.com/coffee-script/), and find me on Twitter [@ricardobeat](http://twitter.com/ricardobeat).
+You can [learn more about CoffeeScript here](http://jashkenas.github.com/coffee-script/), see a few more CoffeeScript snippets on [rosettacode](http://rosettacode.org/wiki/Category:CoffeeScript), and find me on Twitter [@ricardobeat](http://twitter.com/ricardobeat).
