@@ -26,7 +26,7 @@ i * 2 for i in [1..10]
 2. Sum a list of numbers
 ------------------------
 
-Javascript (and CoffeeScript by turn) has the same native [reduce](http://en.wikipedia.org/wiki/Fold_%28higher-order_function%29) function:
+Javascript (and CoffeeScript by extension) also has native [map](http://en.wikipedia.org/wiki/Map_%28higher-order_function%29) and  [reduce](http://en.wikipedia.org/wiki/Fold_%28higher-order_function%29) functions:
 
 {% highlight coffeescript %}
 [1..1000].reduce (t, s) -> t + s
