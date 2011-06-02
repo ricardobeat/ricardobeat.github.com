@@ -141,13 +141,11 @@ sieve = (num) ->
 11. Bonus
 ---------
 
-Shortest still readable fizzbuzz version you'll see:
+Most readable fizzbuzz version you'll ever see:
 
 {% highlight coffeescript %}
-"#{('fizz' unless i%3) ? ''}#{('buzz' unless i%5) ? ''}" or i for i in [1..100]
+"#{if i%3 is 0 then 'fizz' else ''}#{if i%5 is 0 then 'buzz' else ''}" or i for i in [1..100]
 {% endhighlight %}
-
-You can golf your coffee without being cryptic.
 
 Conclusions
 -----------
