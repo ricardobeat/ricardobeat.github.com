@@ -1,0 +1,56 @@
+#!/usr/bin/env coffee
+
+fs = require 'fs'
+cp = require 'child_process'
+
+title = process.argv[2]
+
+if not title
+    console.log "Please provide a title for your post."
+    process.exit 1
+    
+pad = (d) ->
+    if d < 10 and d.toString().length < 2 then "0"+d else d
+
+today = new Date()
+postdate = "#{today.getFullYear()}-#{pad(today.getMonth()+1)}-#{pad(today.getDate())}"
+
+special = /[öäüÖÄÜáàâéèêúùûóòôÁÀÂÉÈÊÚÙÛÓÒÔß]/g
+specialMap =
+  "ä": "a", "ö": "o", "ü": "u",
+  "Ä": "A", "Ö": "O", "Ü": "U",
+  "á": "a", "à": "a", "â": "a",
+  "é": "e", "è": "e", "ê": "e",
+  "ú": "u", "ù": "u", "û": "u",
+  "ó": "o", "ò": "o", "ô": "o",
+  "Á": "A", "À": "A", "Â": "A",
+  "É": "E", "È": "E", "Ê": "E",
+  "Ú": "U", "Ù": "U", "Û": "U",
+  "Ó": "O", "Ò": "O", "Ô": "O",
+  "ß": "s"
+
+normalize = (str) ->
+    return str.replace special, (c) -> specialMap[c] || c
+
+filename = "#{postdate}-#{normalize(title).replace(/\s+/g, '-')}"
+
+contents = """
+---
+layout: post
+title: #{title}
+---
+
+{{ page.title }}
+================
+
+"""
+
+path = "_posts/#{filename}.md"
+
+fs.writeFile path, contents, (err) ->
+    if err
+        return console.log 'error'
+    else
+        console.log "Created post \"#{postname}\""
+        cp.spawn 'mate', [path]
+        process.exit 0
