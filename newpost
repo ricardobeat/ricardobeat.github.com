@@ -51,6 +51,6 @@ fs.writeFile path, contents, (err) ->
     if err
         return console.log 'error'
     else
-        console.log "Created post \"#{postname}\""
+        console.log "Created post \"#{title}\""
         cp.spawn 'mate', [path]
         process.exit 0
