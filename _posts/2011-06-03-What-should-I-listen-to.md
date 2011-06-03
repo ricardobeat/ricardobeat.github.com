@@ -10,7 +10,7 @@ title: What should I listen to?
 
 I do it all the time. I probably visit my own [last.fm profile](http://last.fm/user/superbife) a dozen times a week, just so I can take a look at my library and pick a familiar name to put into the search field (yeah, I dumped Last.FM radio for Grooveshark - I like to hear whole albums).
 
-Enter [What should I listen to?](http://listen.to.ricardo.cc/), _the dumbest web service ever_. It takes a last.fm username and a click, and gives back lots of love in the form of good music recommendations (actually these recommendations come from yourself, but that's not the point...).
+Enter [What should I listen to?](http://listen.to.ricardo.cc/), _the dumbest web service ever_. It takes a last.fm username and a click, and gives back lots of love in the form of good music recommendations (actually these recommendations come from yourself, but you gotta give it some credit...)
 
 I had a lot of fun building it:
 
