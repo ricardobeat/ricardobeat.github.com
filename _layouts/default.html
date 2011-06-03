@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
 <head>
    <meta charset="utf-8" />
    <title>{{ page.title }}</title>
@@ -9,19 +9,20 @@
 	<meta name="MobileOptimized" content="480" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
-	<!--
-	todo: INSERT FEED
-   <link href="http://feeds.feedburner.com/ricardocc" rel="alternate" title="Ricardo Tomasi" type="application/atom+xml" />
-	-->
+	<meta name="description" content="Ricardo Tomasi - web development and design, from back to front"/> 
+  <meta name="keywords" content="web, development, code, html, css, javascript, html5, css3, js, coffeescript, grifo, porto alegre, brazil, brasil, seo, interface, design, ixd, ux, interaction"/>
+	
+   <link href="http://ricardo.cc/atom.xml" rel="alternate" title="Ricardo Tomasi" type="application/atom+xml" />
 
-	<link rel="profile" href="http://microformats.org/profile/hcard">
+	<link rel="profile" href="http://microformats.org/profile/hcard" />
 	
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	
-   <link rel="stylesheet" href="/styles/syntax.css" />
-   <link rel="stylesheet/less" href="/styles/base.less" />
+  <link rel="stylesheet" href="/styles/syntax.css" />
+  <link rel="stylesheet" href="/styles/base.css" />
+  
 	<script src="/scripts/less-1.0.41.min.js"></script>
 	<script>
 	  var _gaq = _gaq || [];
@@ -30,6 +31,7 @@
 	  _gaq.push(['_trackPageLoadTime'])
 	</script>
 	<script src="//www.google-analytics.com/ga.js"></script>
+	
 </head>
 {% if page.date %}
 <body class="page">
