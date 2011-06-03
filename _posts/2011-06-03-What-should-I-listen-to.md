@@ -16,7 +16,7 @@ I had a lot of fun building it:
 
 1. runs on node.js, courtesy of [nodester](http://nodester.com)
 2. IDs are saved in localStorage, and your library's size in your cookies (we need to know the range to shoot at), so no database.
-3. It has no images *per se*, the noisy background is generated via ~~Javascript~~ CoffeeScript and the rest is CSS.
+3. It has no images *per se*, the noisy background is generated via <del>Javascript</del> CoffeeScript and the rest is CSS.
 
 It's not mobile-ready, though that should be easy to accomplish. Source code is [on github](http://github.com/ricardobeat/what-should-i-listen-to).
 
