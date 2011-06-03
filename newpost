@@ -28,9 +28,11 @@ specialMap =
   "Ú": "U", "Ù": "U", "Û": "U",
   "Ó": "O", "Ò": "O", "Ô": "O",
   "ß": "s"
+  
+symbols = /[?!:={}[\]@#$%^&*()~\\\/'""'><]/g
 
 normalize = (str) ->
-    return str.replace special, (c) -> specialMap[c] || c
+    return str.replace(symbols, '').replace special, (c) -> specialMap[c] || c
 
 filename = "#{postdate}-#{normalize(title).replace(/\s+/g, '-')}"
 
