@@ -26,6 +26,8 @@
 	<script>
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-21731259-1'])
+	  _gaq.push(['_setDomainName', '.ricardo.cc'])
+	  _gaq.push(['_setAllowHash', false])
 	  _gaq.push(['_trackPageview'])
 	  _gaq.push(['_trackPageLoadTime'])
 	</script>
@@ -80,7 +82,18 @@
 			</span>
 		</section>
 	</footer>
-
 </div>
+<script>(function(){
+	function trackOutbound(){
+		window._gaq && _gaq.push ['_trackEvent', 'Outbound Link', this.href]
+	}
+	var links = document.getElementsByTagName('a')
+	for (var i = 0, link; link = links[i]; i++){
+		if (~link.href.indexOf(document.domain)) continue;
+		if (link.addEventListener) link.addEventListener('mousedown', trackOutbound, null);
+		else if (link.attachEvent) link.attachEvent('mousedown', trackOutbound);
+	}
+})()
+</script>
 </body>
 </html>
