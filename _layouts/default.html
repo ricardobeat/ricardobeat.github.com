@@ -2,7 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
 <head>
    <meta charset="utf-8" />
-   <title>{{ page.title }}</title>
+	{% if page.date %}
+	<title>{{ page.title }} | Ricardo Tomasi</title>
+	{% else %}
+	<title>{{ page.title }}</title>
+	{% endif %}
    <meta name="author" content="Ricardo Tomasi" />
 
 	<meta name="HandheldFriendly" content="True" />
