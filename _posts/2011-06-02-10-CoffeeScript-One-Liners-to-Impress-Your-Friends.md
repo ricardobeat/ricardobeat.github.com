@@ -147,6 +147,12 @@ Most readable fizzbuzz version you'll ever see:
 "#{if i%3 is 0 then 'fizz' else ''}#{if i%5 is 0 then 'buzz' else ''}" or i for i in [1..100]
 {% endhighlight %}
 
+**edit:** even better with [a little trick by satyr](https://github.com/jashkenas/coffee-script/issues/1406#issuecomment-1293309):
+
+{% highlight coffeescript %}
+"#{['fizz' unless i%3]}#{['buzz' unless i%5]}" or i for i in [1..100]
+{% endhighlight %}
+
 Conclusions
 -----------
 
