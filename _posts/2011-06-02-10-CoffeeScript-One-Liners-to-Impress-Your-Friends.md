@@ -137,6 +137,24 @@ sieve = (num) ->
     numbers.indexOf(num) > -1
 {% endhighlight %}
 
+**update (june/05)**: [@dionyziz](http://twitter.com/dionyziz) sent me this compact version:
+
+{% highlight coffeescript %}
+primes = []
+primes.push i for i in [2..100] when not (j for j in primes when i % j == 0).length
+{% endhighlight %}
+
+which we can then use for a real one-liner like the original:
+
+{% highlight coffeescript %}
+(n) -> (p.push i for i in [2..n] when not (j for j in (p or p=[]) when i%j == 0)[0]) and n in p
+{% endhighlight %}
+
+or the somewhat more efficient
+
+{% highlight coffeescript %}
+(n) -> (p.push i for i in [2..n] when !(p or p=[]).some((j) -> i%j is 0)) and n in p
+{% endhighlight %}
 
 11. Bonus
 ---------
