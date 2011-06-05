@@ -77,10 +77,10 @@ In node.js land this is **only acceptable for application start-up** routines. Y
 First, a 1 to 1 mapping to the Scala version with a bit of string interpolation thrown in the mix:
 
 {% highlight coffeescript %}
-[1..4].map (i) -> console.log "Happy Birthday #{if i is 3 then "dear Robert" else "to You"}"
+[1..4].map (i) -> console.log "Happy Birthday " + (if i is 3 then "dear Robert" else "to You")
 {% endhighlight %}
 
-But we can do better. This is **not** pseudo-code:
+But it get's better. This reads almost like pseudo-code:
 
 {% highlight coffeescript %}
 console.log "Happy Birthday #{if i is 3 then "dear Robert" else "to You"}" for i in [1..4]
