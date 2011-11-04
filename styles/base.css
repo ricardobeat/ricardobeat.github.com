@@ -311,6 +311,13 @@ h1 a {
   padding: 10px 0;
   font-family: "Ubuntu", "Lucida Grande", sans-serif;
 }
+#adsense {
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  width: 125px;
+  height: 125px;
+}
 .page {
   padding-top: 40px;
 }
@@ -368,6 +375,8 @@ h1 a {
 }
 #related {
   margin: 60px 0 20px;
+  padding-right: 200px;
+  position: relative;
 }
 #related time {
   font-size: 0.95em;
@@ -375,6 +384,10 @@ h1 a {
 #related ul {
   padding-left: 20px;
   list-style: disc inside;
+}
+#related #adsense {
+  right: 40px;
+  top: 0px;
 }
 .highlight {
   font-size: 0.875em;
@@ -556,6 +569,19 @@ h1 a {
     float: left;
     text-align: left;
     width: 80px;
+  }
+  #related {
+    padding-right: 0;
+  }
+  #related .posts li {
+    padding: 5px 0 0;
+  }
+  #related .posts ul {
+    padding-bottom: 10px;
+  }
+  #related #adsense {
+    position: static;
+    margin: 20px 0 20px 20px;
   }
 }
 @media screen and (max-height: 560px) {

@@ -200,6 +200,14 @@ h1 {
 	}
 }
 
+#adsense {
+	position:absolute;
+	right:20px;
+	top:60px;
+	width:125px;
+	height:125px;
+}
+
 // ----------------------- // page / post
 
 .page { padding-top:40px; }
@@ -257,10 +265,16 @@ h1 {
 
 #related {
 	margin:60px 0 20px;
+	padding-right:200px;
+	position:relative;
 	time { font-size:0.95em; }
 	ul {
 		padding-left:20px;
 		list-style:disc inside;
+	}
+	#adsense {
+		right:40px;
+		top:0px;
 	}
 }
 
@@ -404,6 +418,17 @@ h1 {
 				text-align:left;
 				width:80px;
 			}
+		}
+	}
+	#related {
+		padding-right:0;
+		.posts {
+			li { padding:5px 0 0; }
+			ul { padding-bottom:10px; }
+		}
+		#adsense {
+			position:static;
+			margin:20px 0 20px 20px;
 		}
 	}
 }
