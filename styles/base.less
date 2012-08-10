@@ -98,29 +98,15 @@ button {  width: auto; overflow: visible; }
 }
 
 // ----------------------- // fontes
-
-@font-face {
-	font-family: 'Ubuntu';
-	.font-src("/fonts/Ubuntu-Regular-webfont", '#webfont1HARLTaU');
-	font-weight: 400;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Ubuntu';
-	.font-src("/fonts/Ubuntu-Bold-webfont", '#webfontp2a9gSv8');
-	font-weight: 700;
-	font-style: normal;
-}
-
-@sans: "Ubuntu", "Lucida Grande", sans-serif;
-@text: "Ubuntu", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma;
+@sans: "Helvetica Neue", sans-serif;
+@text: "Helvetica Neue", sans-serif;
 @serif: Georgia, Palatino, "Hoefler Text", serif;
 @mono: Menlo, Consolas, "Courier New", Courier, Mono, monospace;
 
 // ----------------------- // geral
 
 html {
-	background-color:#fbfbfb;
+	background-color:#fcfcfc;
 	overflow-y:scroll;
 }
 body {
@@ -138,6 +124,7 @@ body {
 body, select, input, textarea { 
   color: #444;
   font-family: @text;
+  font-size: 14px;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -169,8 +156,7 @@ legend, .vhidden {
 
 time {
 	color:#bcbcbc;
-	//font-family: @mono;
-	font-family: "Lucida Grande", sans-serif;
+	font-family: @sans;
 }
 
 #content {
@@ -193,6 +179,9 @@ h1 {
 .posts, .projects {
 	time {
 		margin-right:10px;
+		display:inline-block;
+		width:110px;
+		text-align:right;
 	}
 	li {
 		padding:10px 0;
@@ -210,10 +199,14 @@ h1 {
 
 // ----------------------- // page / post
 
-.page { padding-top:40px; }
-
-.page #header {
-	h1 { font-size:15px; }
+.page {
+	padding-top:40px;
+	#wrap {
+		padding-top:20px;
+	}
+	#header {
+		h1 { font-size:15px; }
+	}
 }
 
 #content .post {
@@ -229,7 +222,7 @@ h1 {
 	h1 {
 		display:inline-block;
 		vertical-align:middle;
-		font-size:32px;
+		font-size:27px;
 	}
 	h2 {
 		font-size:20px;
@@ -243,8 +236,7 @@ h1 {
 	}
 	p {
 		margin:1em 0;
-		line-height:1.4;
-		padding-left:1em;
+		line-height:1.45;
 	}
 	p > code { padding:0 2px; background-color:#eee; font-size:92%; }
 	ul, ol { padding-left:2em; }
@@ -252,6 +244,10 @@ h1 {
 		list-style:decimal inside;
 		color: #09395F;
 		padding-bottom:5px;
+	}
+	ul li {
+		list-style:disc outside;
+		padding-bottom:5px;	
 	}
 }
 

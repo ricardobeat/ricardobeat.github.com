@@ -93,10 +93,12 @@ nav,
 section {
   display: block;
 }
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 blockquote:before,
@@ -127,7 +129,8 @@ mark {
 del {
   text-decoration: line-through;
 }
-abbr[title], dfn[title] {
+abbr[title],
+dfn[title] {
   border-bottom: 1px dotted;
   cursor: help;
 }
@@ -143,7 +146,8 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
-input, select {
+input,
+select {
   vertical-align: middle;
 }
 select,
@@ -155,10 +159,13 @@ button {
 html {
   overflow-y: scroll;
 }
-strong, th {
+strong,
+th {
   font-weight: 700;
 }
-th, td, td img {
+th,
+td,
+td img {
   vertical-align: middle;
 }
 sub {
@@ -189,7 +196,9 @@ select,
 textarea {
   margin: 0;
 }
-input[disabled], select[disabled], textarea[disabled] {
+input[disabled],
+select[disabled],
+textarea[disabled] {
   opacity: 0.8;
   color: #777;
 }
@@ -200,22 +209,8 @@ button {
 .ie7 img {
   -ms-interpolation-mode: bicubic;
 }
-@font-face {
-  font-family: 'Ubuntu';
-  src: url(/fonts/Ubuntu-Regular-webfont.eot) format('eot');
-  src: url(/fonts/Ubuntu-Regular-webfont.eot?#iefix) format('eot'), url(/fonts/Ubuntu-Regular-webfont.woff) format('woff'), url(/fonts/Ubuntu-Regular-webfont.ttf) format('truetype'), url(/fonts/Ubuntu-Regular-webfont.svg#webfont1HARLTaU) format('svg');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Ubuntu';
-  src: url(/fonts/Ubuntu-Bold-webfont.eot) format('eot');
-  src: url(/fonts/Ubuntu-Bold-webfont.eot?#iefix) format('eot'), url(/fonts/Ubuntu-Bold-webfont.woff) format('woff'), url(/fonts/Ubuntu-Bold-webfont.ttf) format('truetype'), url(/fonts/Ubuntu-Bold-webfont.svg#webfontp2a9gSv8) format('svg');
-  font-weight: 700;
-  font-style: normal;
-}
 html {
-  background-color: #fbfbfb;
+  background-color: #fcfcfc;
   overflow-y: scroll;
 }
 body {
@@ -234,7 +229,8 @@ select,
 input,
 textarea {
   color: #444;
-  font-family: "Ubuntu", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
 }
 h1,
 h2,
@@ -242,7 +238,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Ubuntu", "Lucida Grande", sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
   font-weight: 700;
 }
 pre,
@@ -255,10 +251,13 @@ a {
   text-decoration: none;
   color: #5d7de2;
 }
-a:hover, a:active {
+a:hover,
+a:active {
   outline: none;
 }
-a, a:active, a:visited {
+a,
+a:active,
+a:visited {
   color: #19599f;
 }
 a:hover {
@@ -281,7 +280,8 @@ a:link {
   display: none;
   visibility: hidden;
 }
-legend, .vhidden {
+legend,
+.vhidden {
   position: absolute !important;
   left: -9999em;
   text-indent: -9999px;
@@ -289,7 +289,7 @@ legend, .vhidden {
 }
 time {
   color: #bcbcbc;
-  font-family: "Lucida Grande", sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
 }
 #content {
   width: 100%;
@@ -304,12 +304,17 @@ h1 a {
   color: #5d7de2 !important;
   text-decoration: none !important;
 }
-.posts time, .projects time {
+.posts time,
+.projects time {
   margin-right: 10px;
+  display: inline-block;
+  width: 110px;
+  text-align: right;
 }
-.posts li, .projects li {
+.posts li,
+.projects li {
   padding: 10px 0;
-  font-family: "Ubuntu", "Lucida Grande", sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
 }
 #adsense {
   position: absolute;
@@ -321,6 +326,9 @@ h1 a {
 .page {
   padding-top: 40px;
 }
+.page #wrap {
+  padding-top: 20px;
+}
 .page #header h1 {
   font-size: 15px;
 }
@@ -328,7 +336,7 @@ h1 a {
   content: " " url(/images/external.gif);
 }
 #content .post blockquote {
-  font-family: "Ubuntu", "Lucida Grande", sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
   font-weight: 400;
   overflow: hidden;
 }
@@ -338,7 +346,7 @@ h1 a {
 #content .post h1 {
   display: inline-block;
   vertical-align: middle;
-  font-size: 32px;
+  font-size: 27px;
 }
 #content .post h2 {
   font-size: 20px;
@@ -352,20 +360,24 @@ h1 a {
 }
 #content .post p {
   margin: 1em 0;
-  line-height: 1.4;
-  padding-left: 1em;
+  line-height: 1.45;
 }
 #content .post p > code {
   padding: 0 2px;
   background-color: #eee;
   font-size: 92%;
 }
-#content .post ul, #content .post ol {
+#content .post ul,
+#content .post ol {
   padding-left: 2em;
 }
 #content .post ol li {
   list-style: decimal inside;
   color: #09395F;
+  padding-bottom: 5px;
+}
+#content .post ul li {
+  list-style: disc outside;
   padding-bottom: 5px;
 }
 #content h1 {
@@ -399,7 +411,8 @@ h1 a {
   -ms-text-size-adjust: none;
   position: relative;
 }
-.highlight:after, .highlight:before {
+.highlight:after,
+.highlight:before {
   content: ' ';
   display: block;
   position: absolute;
@@ -502,7 +515,8 @@ h1 a {
 #footer .projects h2:after {
   content: ': ';
 }
-#footer .projects ul, #footer .projects li {
+#footer .projects ul,
+#footer .projects li {
   display: inline;
 }
 #footer .projects li {
