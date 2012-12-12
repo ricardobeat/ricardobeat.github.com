@@ -89,15 +89,19 @@ console.log "Happy Birthday #{if i is 3 then "dear Robert" else "to You"}" for i
 6. Filter list of numbers
 -------------------------
 
-Filter a list of numbers into two categories. This is close enough:
+Filter a list of numbers into two categories. The literate way:
 
 {% highlight coffeescript %}
-passed = []
-failed = []
-(if score > 60 then passed else failed).push score for score in [49, 58, 76, 82, 88, 90]
+(if score > 60 then (passed or passed = []) else (failed or failed = [])).push score for score in [49, 58, 76, 82, 88, 90]
 {% endhighlight %}
 
-(could also use `filter` but then it wouldn't be a one-liner...)
+(thanks [@giacecco](http://twitter.com/giacecco) for shortening this)
+
+And the functional way:
+
+{% highlight coffeescript %}
+[passed, failed] = [49, 58, 76, 82, 88, 90].reduce ((p,c,i) -> p[+(c < 60)].push c; p), [[],[]]
+{% endhighlight %}
 
 7. Fetch and Parse a XML web service
 ------------------------------------
@@ -176,6 +180,6 @@ When you use the `+` operator on an Array, it converts it to a string. `[].toStr
 Conclusions
 -----------
 
-Modern languages rule. I'm surprised that some of the syntax in these map so closely to Scala, given they're oceans apart.
+Modern languages are amazingly expressive. I'm also surprised that some of the syntax in these map so closely to Scala, given they're oceans apart.
 
-You can [learn more about CoffeeScript here](http://jashkenas.github.com/coffee-script/), see a few more CoffeeScript snippets on [rosettacode](http://rosettacode.org/wiki/Category:CoffeeScript), and find me on Twitter [@ricardobeat](http://twitter.com/ricardobeat).
+You can [learn more about CoffeeScript here](http://jashkenas.github.com/coffee-script/), see a few more CoffeeScript snippets on [rosettacode](http://rosettacode.org/wiki/Category:CoffeeScript), and follow me on Twitter [@ricardobeat](http://twitter.com/ricardobeat).
