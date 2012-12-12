@@ -6,7 +6,7 @@ title: 10 CoffeeScript One Liners to Impress Your Friends
 {{ page.title }}
 ================
 
-You may have read ["10 Scala One Liners to Impress Your Friends"](http://solog.co/47/10-scala-one-liners-to-impress-your-friends/) at [Marcus Kazmierczak's blog](http://solog.co) recently featured on [HN](http://news.ycombinator.com). Although I don't know Scala (or Java), it all looks quite nice, so I decided to impress my friends too - folks go from Java to Scala, we go from Javascript to CoffeeScript. Assume [node.js](http://nodejs.org) as the environment for all examples.
+You may have read ["10 Scala One Liners to Impress Your Friends"](http://mkaz.com/solog/10-scala-one-liners-to-impress-your-friends) at [Marcus Kazmierczak's blog](http://solog.co) recently featured on [HN](http://news.ycombinator.com). Although I don't know Scala (or Java), it all looks quite nice, so I decided to impress my friends too - folks go from Java to Scala, we go from Javascript to CoffeeScript. Assume [node.js](http://nodejs.org) as the environment for all examples.
 
 1. Multiply each item in a list by 2
 ------------------------------------
