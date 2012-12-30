@@ -114,7 +114,7 @@ body {
 	-ms-text-size-adjust: none;
 }
 #wrap {
-	max-width:940px;
+	max-width:780px;
 	min-width:280px;
 	margin:0 auto;
 	padding:60px 20px 80px;
@@ -124,7 +124,7 @@ body {
 body, select, input, textarea { 
   color: #444;
   font-family: @text;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -249,6 +249,10 @@ h1 {
 		list-style:disc outside;
 		padding-bottom:5px;	
 	}
+	img, audio, video {
+		display: block;
+		margin: 0 auto;
+	}
 }
 
 #content {
@@ -265,8 +269,11 @@ h1 {
 	position:relative;
 	time { font-size:0.95em; }
 	ul {
-		padding-left:20px;
+		padding:10px 0 10px 20px;
 		list-style:disc inside;
+	}
+	li {
+		padding: 5px 0;
 	}
 	#adsense {
 		right:40px;
@@ -317,18 +324,6 @@ h1 {
 	font-size:0.9em;
 	line-height:1.2;
 	z-index:8;
-	&:after {
-		content:' ';
-		position:fixed;
-		display:block;
-		z-index:-2;
-		height:8px;
-		bottom:80px;
-		left:25%;
-		right:25%;
-		.box-shadow(0 0 16px rgba(0,0,0,0.2));
-		.border-radius(e('500px / 30px'));
-	}
 	.col {
 		float:left;
 		width:50%;
@@ -338,28 +333,18 @@ h1 {
  	.n { padding-bottom:3px; display:block; }
 	.email { display:block; }
 	
-	.projects {
-		height:20px;
-		padding:5px 0;
-		line-height:20px;
-		h2 { display:inline; color:#777; font-weight:400; }
-		h2:after { content:': '; }
-		ul, li { display:inline; }
-		li { padding-left:20px; }
-		border-bottom:1px solid #dfdfdf;
-		margin-bottom:10px;
-		background-color:#fbfbfb;
-		min-width:280px;
+	.vcard {
+		padding:10px 0;
 	}
-	
 	.links {
 		.box-sizing(border-box);
 		padding:0 40px 0 20px;
+		line-height: 41px;
+		text-align: right;
 		li {
-			float:right;
-			width:100px;
-			&:nth-child(2n+2) { clear: both; }
-			padding-bottom:3px;
+			display: inline-block;
+			width:75px;
+			text-decoration: underline;
 		}
 	}
 }
@@ -370,7 +355,6 @@ h1 {
 .page #footer {
 	position:relative;
 	margin-top:40px;
-	&:after { position:absolute; }
 }
 
 @media only screen and (max-width: 764px) {
@@ -385,7 +369,6 @@ h1 {
 	}
 	#footer {
 		height:120px;
-		&:after { bottom:120px; }
 		.col {
 			width:auto;
 			clear:left;

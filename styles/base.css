@@ -218,7 +218,7 @@ body {
   -ms-text-size-adjust: none;
 }
 #wrap {
-  max-width: 940px;
+  max-width: 780px;
   min-width: 280px;
   margin: 0 auto;
   padding: 60px 20px 80px;
@@ -230,7 +230,7 @@ input,
 textarea {
   color: #444;
   font-family: "Helvetica Neue", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 }
 h1,
 h2,
@@ -380,6 +380,12 @@ h1 a {
   list-style: disc outside;
   padding-bottom: 5px;
 }
+#content .post img,
+#content .post audio,
+#content .post video {
+  display: block;
+  margin: 0 auto;
+}
 #content h1 {
   font-size: 24px;
   margin-bottom: 0;
@@ -394,8 +400,11 @@ h1 a {
   font-size: 0.95em;
 }
 #related ul {
-  padding-left: 20px;
+  padding: 10px 0 10px 20px;
   list-style: disc inside;
+}
+#related li {
+  padding: 5px 0;
 }
 #related #adsense {
   right: 40px;
@@ -452,22 +461,6 @@ h1 a {
   line-height: 1.2;
   z-index: 8;
 }
-#footer:after {
-  content: ' ';
-  position: fixed;
-  display: block;
-  z-index: -2;
-  height: 8px;
-  bottom: 80px;
-  left: 25%;
-  right: 25%;
-  -webkit-box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
-  -webkit-border-radius: 500px / 30px;
-  -moz-border-radius: 500px / 30px;
-  border-radius: 500px / 30px;
-}
 #footer .col {
   float: left;
   width: 50%;
@@ -483,43 +476,21 @@ h1 a {
 #footer .email {
   display: block;
 }
-#footer .projects {
-  height: 20px;
-  padding: 5px 0;
-  line-height: 20px;
-  border-bottom: 1px solid #dfdfdf;
-  margin-bottom: 10px;
-  background-color: #fbfbfb;
-  min-width: 280px;
-}
-#footer .projects h2 {
-  display: inline;
-  color: #777;
-  font-weight: 400;
-}
-#footer .projects h2:after {
-  content: ': ';
-}
-#footer .projects ul,
-#footer .projects li {
-  display: inline;
-}
-#footer .projects li {
-  padding-left: 20px;
+#footer .vcard {
+  padding: 10px 0;
 }
 #footer .links {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0 40px 0 20px;
+  line-height: 41px;
+  text-align: right;
 }
 #footer .links li {
-  float: right;
-  width: 100px;
-  padding-bottom: 3px;
-}
-#footer .links li:nth-child(2n+2) {
-  clear: both;
+  display: inline-block;
+  width: 75px;
+  text-decoration: underline;
 }
 .page #wrap {
   padding-bottom: 20px;
@@ -527,9 +498,6 @@ h1 a {
 .page #footer {
   position: relative;
   margin-top: 40px;
-}
-.page #footer:after {
-  position: absolute;
 }
 @media only screen and (max-width: 764px) {
   #footer .links li {
@@ -550,9 +518,6 @@ h1 a {
   }
   #footer {
     height: 120px;
-  }
-  #footer:after {
-    bottom: 120px;
   }
   #footer .col {
     width: auto;
