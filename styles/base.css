@@ -316,12 +316,6 @@ h1 a {
   padding: 10px 0;
   font-family: "Helvetica Neue", sans-serif;
 }
-#adsense {
-  padding: 0px 0;
-}
-#adsense ins {
-  background: transparent;
-}
 .page {
   padding-top: 40px;
 }
@@ -407,6 +401,7 @@ h1 a {
   padding: 5px 0;
 }
 #related #adsense {
+  position: absolute;
   right: 40px;
   top: 0px;
 }
