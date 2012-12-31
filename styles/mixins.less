@@ -1,0 +1,42 @@
+// ----------------------- // mixins
+.border-radius(@radius: 3px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+.opacity(@alpha: 1) {
+    -moz-opacity: @alpha;
+         opacity: @alpha;
+    @ms: @alpha * 100;
+    filter: e(%('alpha(opacity=%d)', @alpha * 100));
+    -ms-filter: %('progid:DXImageTransform.Microsoft.Alpha(Opacity=%d)', @alpha * 100);
+}
+.horizontal-gradient(@from, @to){
+    background:-webkit-gradient(linear, left top, right top, color-stop(0%, @from), color-stop(100%, @to));
+    background:-webkit-linear-gradient(0deg, @from, @to);
+    background:-moz-linear-gradient(0deg, @from, @to);
+    background:-o-linear-gradient(0deg, @from, @to);
+    background:linear-gradient(0deg, @from, @to);
+}
+.text-shadow(@shadow) {
+    -webkit-text-shadow: @shadow;
+       -moz-text-shadow: @shadow;
+            text-shadow: @shadow;
+}
+.box-shadow(@shadow) {
+    -webkit-box-shadow: @shadow;
+       -moz-box-shadow: @shadow;
+            box-shadow: @shadow;
+}
+.box-sizing(@s) {
+    -webkit-box-sizing: @s;
+       -moz-box-sizing: @s;
+            box-sizing: @s;
+}
+.font-src(@path, @svgid) {
+    src: e(%("url(%s.eot) format('eot')", @path));
+    src: e(%("url(%s.eot?#iefix) format('eot')", @path)),
+         e(%("url(%s.woff) format('woff')", @path)),
+        e(%("url(%s.ttf) format('truetype')", @path)),
+         e(%("url(%s.svg%s) format('svg')", @path, @svgid));
+}

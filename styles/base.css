@@ -213,10 +213,6 @@ html {
   background-color: #fcfcfc;
   overflow-y: scroll;
 }
-body {
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: none;
-}
 #wrap {
   max-width: 780px;
   min-width: 280px;
@@ -239,7 +235,7 @@ h4,
 h5,
 h6 {
   font-family: "Helvetica Neue", sans-serif;
-  font-weight: 700;
+  font-weight: 500;
 }
 pre,
 code,
@@ -354,6 +350,7 @@ h1 a {
 #content .post p {
   margin: 1em 0;
   line-height: 1.5;
+  font-weight: 300;
 }
 #content .post p > code {
   padding: 0 2px;

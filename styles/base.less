@@ -1,101 +1,5 @@
-/* 
-  html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
-  v1.4 2009-07-27 | Authors: Eric Meyer & Richard Clark
-  html5doctor.com/html-5-reset-stylesheet/
-*/
-
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-	margin:0;
-	padding:0;
-	border:0;
-	outline:0;
-	font-size:100%;
-	vertical-align:baseline;
-	background:transparent;
-}                  
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section { display:block; }
-
-ol, ul { list-style:none; }
-blockquote, q { quotes:none; }
-blockquote:before, blockquote:after,
-q:before, q:after { content:''; content:none; }
-a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
-ins { background-color:#ff9; color:#000; text-decoration:none; }
-mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
-del { text-decoration: line-through; }
-abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
-table { border-collapse:collapse; border-spacing:0; }
-hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
-input, select { vertical-align:middle; }
-select, input, textarea, button { font:99% sans-serif; }
-html { overflow-y: scroll; }
-strong, th { font-weight: 700; }
-th, td, td img { vertical-align: middle; }
-sub { vertical-align: sub; font-size: smaller; }
-sup { vertical-align: super; font-size: smaller; }
-pre { white-space:pre-wrap; white-space: pre; }
-textarea { overflow: auto; }
-label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
-button, input, select, textarea { margin: 0; }
-input[disabled], select[disabled], textarea[disabled] { opacity:0.8; color:#777; }
-button {  width: auto; overflow: visible; }
-.ie7 img { -ms-interpolation-mode: bicubic; }
-
-// ----------------------- // mixins
-.border-radius(@radius: 3px) {
-  -webkit-border-radius: @radius;
-     -moz-border-radius: @radius;
-          border-radius: @radius;
-}
-.opacity(@alpha: 1) {
-	-moz-opacity: @alpha;
-	     opacity: @alpha;
-	@ms: @alpha * 100;
-	filter: e(%('alpha(opacity=%d)', @alpha * 100));
-	-ms-filter: %('progid:DXImageTransform.Microsoft.Alpha(Opacity=%d)', @alpha * 100);
-}
-.horizontal-gradient(@from, @to){
-	background:-webkit-gradient(linear, left top, right top, color-stop(0%, @from), color-stop(100%, @to));
-	background:-webkit-linear-gradient(0deg, @from, @to);
-	background:-moz-linear-gradient(0deg, @from, @to);
-	background:-o-linear-gradient(0deg, @from, @to);
-	background:linear-gradient(0deg, @from, @to);
-}
-.text-shadow(@shadow) {
-	-webkit-text-shadow: @shadow;
-	   -moz-text-shadow: @shadow;
-	        text-shadow: @shadow;
-}
-.box-shadow(@shadow) {
-	-webkit-box-shadow: @shadow;
-	   -moz-box-shadow: @shadow;
-	        box-shadow: @shadow;
-}
-.box-sizing(@s) {
-	-webkit-box-sizing: @s;
-	   -moz-box-sizing: @s;
-	        box-sizing: @s;
-}
-.font-src(@path, @svgid) {
-	src: e(%("url(%s.eot) format('eot')", @path));
-	src: e(%("url(%s.eot?#iefix) format('eot')", @path)),
-	     e(%("url(%s.woff) format('woff')", @path)),
-        e(%("url(%s.ttf) format('truetype')", @path)),
-	     e(%("url(%s.svg%s) format('svg')", @path, @svgid));
-}
+@import "reset";
+@import "mixins";
 
 // ----------------------- // fontes
 @sans: "Helvetica Neue", sans-serif;
@@ -108,10 +12,6 @@ button {  width: auto; overflow: visible; }
 html {
 	background-color:#fcfcfc;
 	overflow-y:scroll;
-}
-body {
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: none;
 }
 #wrap {
 	max-width:780px;
@@ -129,7 +29,7 @@ body, select, input, textarea {
 
 h1,h2,h3,h4,h5,h6 {
 	font-family: @sans;
-	font-weight:700;
+	font-weight: 500;
 }
 
 pre, code, kbd, samp {
@@ -228,7 +128,8 @@ h1 {
 	}
 	p {
 		margin:1em 0;
-		line-height:1.5;
+		line-height:1.6;
+		font-weight:300;
 	}
 	p > code { padding:0 2px; background-color:#eee; font-size:92%; }
 	ul, ol { padding-left:2em; }
