@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Debug de um app em CoffeeScript
+title: Debug de uma aplicação em CoffeeScript
 ---
 
 {{ page.title }}
