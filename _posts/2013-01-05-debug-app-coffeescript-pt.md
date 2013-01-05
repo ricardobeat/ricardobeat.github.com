@@ -83,7 +83,9 @@ Agora vamos inserir um erro, uma tentativa de acesso a uma propriedade não-exis
 
 {% endhighlight %}
 
-Nesse caso a compilação ocorre normalmente - para o compiler está tudo certo, ele não tem conhecimento sobre os objetos no momento da execução. Ao abrir o browser porém a aplicação não carregou:
+(se você não percebeu o erro: `Model` -> `model`)
+
+Nesse caso a compilação ocorre normalmente - para o compiler o código está ok, ele não tem conhecimento sobre os objetos no momento da execução. Ao abrir o browser porém a aplicação não carregou:
 
 ![Tela branca](/images/debug-blank.png)
 
@@ -106,10 +108,55 @@ No exemplo acima, a única diferença em relação a debugar javascript é não 
 
 Infelizmente a versão atual do coffeescript (1.4.0) não gera source maps, mas um rewrite [já está em andamento](https://github.com/michaelficarra/CoffeeScriptRedux) e deve se tornar o compiler oficial nos próximos meses.
 
+
+Node.js
+-------
+
+Ao instalar o coffeescript na sua máquina com `npm install coffee-script -g`, o executável `coffee` é adicionado ao seu path. Ele nada mais é do que uma invocação do `node` com o módulo `coffee-script` carregado. Ou seja, `coffee meuapp.coffee` é o equivalente a executar:
+
+    require('coffee-script') // registra .coffee no require.extensions
+    require('./meuapp')
+
+Este padrão é comum no deployment de aplicações em serviços como Heroku, dotCloud, nodejitsu, etc - em geral se exige um arquivo `server/main/app.js` para inicialização.
+
+Como exemplo vou usar o código do [jetcraft](http://playjetcraft.net/), jogo que desenvolvi junto com o [@vitor42](http://twitter.com/vitor42) para o Node Knockout 2013:
+
+{% highlight coffeescript %}
+# app.coffee
+express  = require 'express'
+http     = require 'http'
+
+app = express()
+
+app.configure ->
+  app.use app.router
+  app.use express.static "#{__dirname}/public"
+  
+app.configure 'development', ->
+  app.use express.errorHandler dumpExceptions: true, showStack: true
+
+app.get '/', (req, res) ->
+  res.render 'index', nada
+
+{% endhighlight %}
+
+Note que a variável `nada` não foi definida. Como lá em cima ativamos o `express.errorHandler` com dump e showStack, o erro é enviado para browser além de impresso no console:
+
+![Erro do Express no browser](/images/debug-node-browser.png)
+
+![Erro no terminal](/images/debug-node-coffee.png)
+
+Em ambos os casos o erro indica a linha exata do `.coffee`:
+
+    ReferenceError: nada is not defined
+        at /Users/ricardobeat/Projects/jetcraft/app.coffee:42:32
+
+Portanto no node.js coffeescript e javascript estão no mesmo patamar. Não é necessário ter um script de build ou tarefas de compile/watch. Somente no caso de escrever código para ser compartilhado, como uma biblioteca ou módulo do NPM, é util pré-compilar o código para distribuição.
+
 Conclusões
 ----------
 
-Não tenha medo de utilizar CoffeeScript pela questão de debug. Se a sua equipe tem capacidade e curiosidade para aprender a linguagem, os benefícios que vem ela valem muito a pena. Ainda mais considerando o uso de TDD, build scripts (reduzindo o tamanho de cada source), e os padrões atuais de código, não ter a linha exata de um runtime error é a menor das preocupações.
+Não tenha medo de utilizar CoffeeScript pela questão de debug. Se a sua equipe tem capacidade e curiosidade para aprender a linguagem, as vantagens que ela oferece são muitas. Ainda mais considerando o uso de TDD, build scripts (reduzindo o tamanho de cada source), e os padrões atuais de código, não ter a linha exata de um runtime error é a menor das preocupações.
 
 Aprenda mais sobre CoffeeScript no [site oficial](http://coffeescript.org) ou com os livros (grátis):
 
