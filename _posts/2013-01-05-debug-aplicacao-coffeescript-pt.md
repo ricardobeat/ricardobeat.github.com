@@ -146,17 +146,17 @@ Note que a variável `nada` não foi definida. Como lá em cima ativamos o `expr
 
 ![Erro no terminal](/images/debug-node-coffee.png)
 
-Em ambos os casos o erro indica a linha exata do `.coffee`:
+Em ambos os casos o erro indica o arquivo `.coffee` que originou o erro:
 
     ReferenceError: nada is not defined
         at /Users/ricardobeat/Projects/jetcraft/app.coffee:42:32
 
-Portanto no node.js coffeescript e javascript estão no mesmo patamar. Não é necessário ter um script de build ou tarefas de compile/watch. Somente no caso de escrever código para ser compartilhado, como uma biblioteca ou módulo do NPM, é util pré-compilar o código para distribuição.
+Assim, não é estritamente necessário ter um script de build ou tarefas de compile/watch. É util no caso de escrever código para ser compartilhado, como uma biblioteca ou módulo do NPM, para distribuição sem a dependência do módulo coffee-script.
 
 Conclusões
 ----------
 
-Não tenha medo de utilizar CoffeeScript pela questão de debug. Se a sua equipe tem capacidade e curiosidade para aprender a linguagem, as vantagens que ela oferece são muitas. Ainda mais considerando o uso de TDD, build scripts (reduzindo o tamanho de cada source), e os padrões atuais de código, não ter a linha exata de um runtime error é a menor das preocupações.
+Não tenha medo de utilizar CoffeeScript pela questão de debug. As vantagens da linguagem compensam e muito esse detalhe, que está por ser corrigido em breve. Ainda mais considerando o uso de TDD, build scripts também para o front-end (reduzindo o tamanho de cada source), e os padrões atuais de código, não ter a linha exata de um runtime error é a menor das preocupações.
 
 Aprenda mais sobre CoffeeScript no [site oficial](http://coffeescript.org) ou com os livros (grátis):
 
