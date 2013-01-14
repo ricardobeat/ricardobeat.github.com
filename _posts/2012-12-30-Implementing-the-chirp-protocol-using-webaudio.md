@@ -142,7 +142,7 @@ enough that there are very few implementations around, none of them in javascrip
 The RS scheme depends on something called a [Galois Field](http://en.wikipedia.org/wiki/Finite_field). According to my very
 limited math exploration, these are fields that have the curious and useful property that every operation between two elements results in a value that is also an element of the field. They come in powers of two; probably the reason why the Chirp guys chose a table size 32 - 16 is too low density, 256 would result in notes way too close for reliable detection.
 
-Most implementations of these work with 8-bit symbols, using a GF(2^8), but we need a GF(2^5). I found a [python implementation of Reed-Solomon](https://github.com/brownan/Reed-Solomon) that seemed workable, but failed to convert it to 5-bit space. An easier way would be to compile a C implementation using Emscriptem so that we can do the message encoding in the browser.
+Most implementations of these work with 8-bit symbols, using a GF(2^8), but we need a GF(2^5). I found a [python implementation of Reed-Solomon](https://github.com/brownan/Reed-Solomon), but failed to convert it to 5-bit space. An easier way might be to compile a C implementation using Emscripten to run in the browser.
 
 For now, we can simply grab a ready-made chirp code for testing. This is what one looks like:
 
