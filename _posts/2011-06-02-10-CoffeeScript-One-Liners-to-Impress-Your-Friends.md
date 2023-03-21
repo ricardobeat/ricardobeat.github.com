@@ -130,18 +130,7 @@ Not there yet. You can create [child processes](http://nodejs.org/docs/v0.4.8/ap
 10. Sieve of Eratosthenes
 -------------------------
 
-Couldn't get this down to one line. Ideas?
-
-{% highlight coffeescript %}
-sieve = (num) ->
-    numbers = [2..num]
-    while ((pos = numbers[0]) * pos) <= num
-        delete numbers[i] for n, i in numbers by pos
-        numbers.shift()
-    numbers.indexOf(num) > -1
-{% endhighlight %}
-
-**update (june/05)**: [@dionyziz](http://twitter.com/dionyziz) sent me this compact version:
+**update**: [@dionyziz](http://twitter.com/dionyziz) sent me this compact version:
 
 {% highlight coffeescript %}
 primes = []
