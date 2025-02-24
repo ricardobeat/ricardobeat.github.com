@@ -158,7 +158,7 @@ The code is `hjsrg00lgbif4c6u07sq`. It can error-correct up to 5 characters, so 
 So now we just need to feed that code and set the frequencies in the oscillator. Here is the working chirp player using the WebAudio API - open the Chirp app on your phone and press the yellow button:
 
 <div id="chirp-demo" style="width:300px; margin:0 auto;" class="block">
-    <script src="http://ricardobeat.github.com/chirpweb/assets/chirp.js"></script>
+    <script src="http://ricardobeat.github.io/chirpweb/assets/chirp.js"></script>
     <style scoped>
     .chirp {
         display: block;
