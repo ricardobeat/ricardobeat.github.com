@@ -1,5 +1,0 @@
-h1. Blog
-
-Git blog using "Jekyll":http://github.com/mojombo/jekyll on github pages.
-
-http://ricardo.cc
